@@ -1,0 +1,123 @@
+@use "base";
+
+.header {
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 10px 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: base.$bg-layout;
+  z-index: 999;
+  .group-search {
+    border-radius: 20px;
+    max-height: 400px;
+    overflow: hidden;
+  }
+  & .search-box,
+  & > div {
+    border-radius: 20px;
+    background-color: inherit;
+    & input {
+      border-radius: inherit;
+      height: 100%;
+      padding-right: 20px;
+      &::placeholder {
+        color: base.$text-nomal;
+      }
+    }
+  }
+  & .sugget-search {
+    max-height: calc(100vh - 180px);
+    overflow-y: scroll;
+    & a:hover {
+      background-color: base.$alpha-bg;
+    }
+  }
+}
+
+.purple-color {
+  color: base.$purple-primary;
+}
+.main-container {
+  padding: 60px 65px 0;
+  height: 3000px;
+  background-color: base.$bg-layout;
+}
+
+.gallery {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  & .gallery-item {
+    position: absolute;
+    width: calc(100% / 3 - 13px);
+    height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+      z-index 0s linear 0.25s;
+    background-color: transparent;
+    & .gallery-card {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & .gallery-item-first {
+    transform: translateX(-70%);
+    opacity: 0;
+    z-index: -5;
+  }
+  & .gallery-item-last {
+    transform: translateX(50%);
+    opacity: 0;
+    z-index: -5;
+  }
+  & .gallery-item-add {
+    transform: translateX(160%);
+    opacity: 0;
+    z-index: -5;
+  }
+  & .gallery-item-next {
+    transform: translateX(calc(100% + 21px));
+  }
+  & .gallery-item-selected {
+    transform: translateX(0);
+  }
+  & .gallery-item-previous {
+    transform: translateX(calc(-100% - 21px));
+  }
+
+  & .gallery-item-next,
+  .gallery-item-selected,
+  .gallery-item-previous {
+    z-index: 2;
+  }
+
+  &:hover .btn-slide {
+    display: flex;
+    transition: all 0.2s ease;
+    z-index: 99;
+  }
+  & .btn-slide {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: hsla(0, 0%, 100%, 0.15);
+    box-shadow: 0 2px 4px 0 rgba(226, 102, 102, 0.15);
+  }
+}

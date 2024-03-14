@@ -1,0 +1,127 @@
+@use "base";
+
+.layout {
+  min-width: 768px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: base.$bg-layout;
+  & .frame-view {
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-flow: row wrap;
+    & .zing-content,
+    & .menu {
+      height: 100%;
+      overflow: hidden;
+    }
+    & .zing-content {
+      width: 70.3%;
+      min-height: 100%;
+      position: relative;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      border-right: 1px solid base.$extra-bg;
+    }
+    & .menu-left {
+      width: 12.5%;
+      position: relative;
+      background-color: base.$extra-bg;
+      & .separation {
+        height: 1px;
+        background-color: base.$active-extra-bg;
+      }
+      & .create-playlis {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        gap: 18px;
+        width: 100%;
+        height: 54px;
+        padding: 0 24px;
+        font-weight: 600;
+        border-top: 1px solid base.$active-extra-bg;
+        background-color: inherit;
+        z-index: 99;
+      }
+    }
+    & .menu-right {
+      width: 17.2%;
+      padding: 0px 10px 0;
+      & .switch-btn {
+        color: base.$text-primary;
+        background-color: base.$tab-active;
+      }
+    }
+  }
+  & .footer-player {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    z-index: 999;
+    cursor: pointer;
+    background-color: base.$bg-solid;
+    border-top: 1px solid base.$active-extra-bg;
+    & > div {
+      width: calc(100% / 3);
+      display: flex;
+      align-items: center;
+      .handle-song:hover {
+        background-color: base.$active-extra-bg;
+      }
+    }
+    & > div:first-child {
+      justify-content: flex-start;
+      & .card-song-playing {
+        width: 64px;
+        height: 64px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    }
+    & > div:last-child {
+      justify-content: flex-end;
+    }
+    & > div:nth-child(2) {
+      flex-flow: column;
+      justify-content: center;
+      gap: 16
+      px;
+    }
+  }
+}
+
+.login-box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: base.$text-primary;
+  background-color: base.$purple-primary;
+  border-radius: 10px;
+  font-size: 12px;
+  & p,
+  button {
+    font-weight: 600;
+    text-align: center;
+  }
+  & button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid base.$text-primary;
+    width: 90%;
+    height: 38px;
+    padding: 6px;
+    border-radius: 15px;
+  }
+}

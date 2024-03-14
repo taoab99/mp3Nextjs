@@ -1,0 +1,57 @@
+$text-nomal: #dadada;
+$text-primary: #fff;
+$text-disable: hsla(0, 0%, 100%, 0.5);
+$purple-primary: #9b4de0;
+$purple-bold: #34224f;
+$bg-layout: #170f23;
+$bg-solid: #130c1c;
+$extra-bg: #231b2e;
+$active-extra-bg: #3a3344;
+$tab-active: hsla(0, 0%, 100%, 0.3);
+$alpha-bg: hsla(0, 0%, 100%, 0.1);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-nomal;
+}
+
+.bg-active-extra {
+  background-color: $active-extra-bg;
+}
+.bg-purple-primary {
+  background-color: $purple-primary;
+}
+.bg-purple-bold {
+  background-color: $purple-bold;
+}
+.text-link:hover {
+  color: $text-primary;
+}
+.text-active {
+  color: $text-primary;
+}
+.navlink-active {
+  border-left-color: $purple-primary;
+  background-color: $active-extra-bg;
+}
+
+// custom scroll bar
+::-webkit-scrollbar {
+  width: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: $tab-active;
+  border-radius: 3px;
+}
